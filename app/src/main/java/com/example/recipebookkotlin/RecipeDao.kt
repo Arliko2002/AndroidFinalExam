@@ -1,22 +1,20 @@
-package com.example.recipebookkotlin.dao
+package com.example.recipebookkotlin
+
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-/*import com.codingwithme.recipeapp.entities.Category
-import com.codingwithme.recipeapp.entities.CategoryItems
-import com.codingwithme.recipeapp.entities.MealsItems*/
-import com.example.recipebookkotlin.entities.Recipes
+import com.example.recipebookkotlin.entities.Category
 
 @Dao
 interface RecipeDao {
 
-    @get:Query("SELECT * FROM recipes ORDER BY id DESC")
-    val allRecipes: List<Recipes>
+    @get:Query("SELECT * FROM category ORDER BY id DESC")
+    val getAllCategory: List<Category>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertRecipe(recipes: Recipes)
+    fun insertCategory(category: Category)
 
 
 /*    @Query("SELECT * FROM categoryitems ORDER BY id DESC")
