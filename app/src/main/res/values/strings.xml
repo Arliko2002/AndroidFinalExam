@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RecipeBookKotlin</string>
+    <string name="welcome">Welcome to</string>
+    <string name="project">Our Project</string>
+    <string name="registration">Get Started</string>
+    <string name="signIn">Sign In</string>
+    <string name="signUp">Sign Up</string>
+</resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivityTest"
+    android:orientation="vertical"
+    android:background="@color/white">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="All Recipes"
+        android:textColor="@color/black"
+        android:fontFamily="@font/comicneue"
+        android:textSize="20dp"
+        android:padding="10dp"/>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:cardCornerRadius="10dp"
+        android:elevation="10dp">
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/search_view"
+            android:queryHint="Search for recipes"
+            android:iconifiedByDefault="false"
+            android:queryBackground="@color/transparent"
+            android:theme="@style/ThemeOverlay.Search"
+            android:background="@drawable/search_bg"/>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rv_main_category"
+        tools:itemCount="2"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        tools:listitem="@layout/item_rv_main_category"/>
+
+</LinearLayout>
