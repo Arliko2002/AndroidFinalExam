@@ -59,15 +59,16 @@ class MainActivity : BaseActivity(), EasyPermissions.RationaleCallbacks, EasyPer
     }
     fun insertDataIntoRoomDb(category: Category?) {
 
-        /*CoroutineScope().launch {
+      launch {
             this.let {
-
+                RecipeDatabase.getDatabase(this@MainActivity).recipeDao().clearDb()
                 for (arr in category!!.CategoriesItems) {
                     RecipeDatabase.getDatabase(this@MainActivity)
                         .recipeDao().insertCategory(arr)
                 }
+                btnGetStarted.visibility=View.VISIBLE
             }
-        }*/
+        }
 
     }
     private fun HasReadStoragePermision():Boolean{
@@ -107,13 +108,13 @@ class MainActivity : BaseActivity(), EasyPermissions.RationaleCallbacks, EasyPer
     }
 
     override fun onPermissionsGranted(requestCode: Int, perms: MutableList<String>) {
-        if (EasyPermissions.somePermissionPermanentlyDenied(this, perms)) {
-            AppSettingsDialog.Builder(this).build().show()
-        }
+
     }
 
     override fun onPermissionsDenied(requestCode: Int, perms: MutableList<String>) {
-
+        if (EasyPermissions.somePermissionPermanentlyDenied(this, perms)) {
+            AppSettingsDialog.Builder(this).build().show()
+        }
     }
 
 }

@@ -19,7 +19,7 @@ abstract class RecipeDatabase: RoomDatabase() {
 
         @Synchronized
         fun getDatabase(context: Context): RecipeDatabase {
-            if (recipeDatabase != null) {
+            if (recipeDatabase == null) {
                 recipeDatabase =
                     Room.databaseBuilder(context, RecipeDatabase::class.java, "recipe.db")
                 .build()}

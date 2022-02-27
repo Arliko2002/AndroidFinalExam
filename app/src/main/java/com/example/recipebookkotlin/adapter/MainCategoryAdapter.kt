@@ -8,21 +8,24 @@ import com.example.recipebookkotlin.R
 
 import android.content.Context
 import com.bumptech.glide.Glide
+import com.example.recipebookkotlin.entities.CategoryItems
 import com.example.recipebookkotlin.entities.Recipes
 import kotlinx.android.synthetic.main.item_rv_main_category.view.*
 
 
 class MainCategoryAdapter: RecyclerView.Adapter<MainCategoryAdapter.RecipeViewHolder>() {
-    var arrMainCategory = ArrayList<Recipes>()
+    var ctx:Context?=null
+    var arrMainCategory = ArrayList<CategoryItems>()
     class RecipeViewHolder(view: View):RecyclerView.ViewHolder(view){
 
 
     }
-    fun setData(arrData : List<Recipes>){
-        arrMainCategory = arrData as ArrayList<Recipes>
+    fun setData(arrData : List<CategoryItems>){
+        arrMainCategory = arrData as ArrayList<CategoryItems>
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeViewHolder {
+       ctx=parent.context
         return RecipeViewHolder((LayoutInflater.from(parent.context).inflate(R.layout.item_rv_main_category, parent, false)))
     }
 
@@ -31,6 +34,8 @@ class MainCategoryAdapter: RecyclerView.Adapter<MainCategoryAdapter.RecipeViewHo
     }
 
     override fun onBindViewHolder(holder: RecipeViewHolder, position: Int) {
-        holder.itemView.tv_dish_name.text = arrMainCategory[position].dishName
+        holder.itemView.tv_dish_name.text = arrMainCategory[position].Strcategory
+
+        Glide.with(ctx!!).load(arrMainCategory[position].Strcategorythumb).into(holder.itemView.img_dish)
     }
 }
