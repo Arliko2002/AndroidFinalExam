@@ -6,6 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.recipebookkotlin.entities.Category
+import com.example.recipebookkotlin.entities.CategoryItems
 
 @Dao
 interface RecipeDao {
@@ -17,13 +18,13 @@ interface RecipeDao {
     fun insertCategory(category: Category)
 
 
-/*    @Query("SELECT * FROM categoryitems ORDER BY id DESC")
+    @Query("SELECT * FROM categoryitems ORDER BY id DESC")
     suspend fun getAllCategory() : List<CategoryItems>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertCategory(categoryItems: CategoryItems?)
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+/*    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertMeal(mealsItems: MealsItems?)
 
     @Query("DELETE FROM categoryitems")
