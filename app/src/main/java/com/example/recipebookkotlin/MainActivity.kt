@@ -59,7 +59,7 @@ class MainActivity : BaseActivity(), EasyPermissions.RationaleCallbacks, EasyPer
     }
     fun insertDataIntoRoomDb(category: Category?) {
 
-        CoroutineScope().launch {
+        /*CoroutineScope().launch {
             this.let {
 
                 for (arr in category!!.CategoriesItems) {
@@ -67,7 +67,7 @@ class MainActivity : BaseActivity(), EasyPermissions.RationaleCallbacks, EasyPer
                         .recipeDao().insertCategory(arr)
                 }
             }
-        }
+        }*/
 
     }
     private fun HasReadStoragePermision():Boolean{
