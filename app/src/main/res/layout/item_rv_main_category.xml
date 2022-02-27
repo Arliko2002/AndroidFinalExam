@@ -23,11 +23,11 @@
                 android:id="@+id/img_dish"
                 android:layout_width="@dimen/_70sdp"
                 android:layout_height="@dimen/_70sdp"
-                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="60dp"
+                android:layout_marginBottom="60dp"
                 android:layout_marginRight="-20dp"
-                android:src="@drawable/cat_img2" />
+                android:src="@drawable/beef" />
 
             <TextView
                 android:id="@+id/tv_dish_name"
